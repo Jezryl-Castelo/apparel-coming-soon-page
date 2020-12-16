@@ -1,0 +1,112 @@
+body {
+    background-color: pink;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;      
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+/*----container----*/
+.container {
+    display: grid;
+    align-items: center;
+   grid-template-columns: 535px 442px;
+    margin: 0 auto;
+    /*padding: 0;*/
+    /*width: 62%;*/
+    max-width: 900px;
+    height: 580px;
+    position: relative;
+    top: 10vh;
+    background-color: rgba(247, 247, 247, 0.797);
+}
+
+.left-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    height: 580px;
+    padding-left: 60px;  
+}
+
+.logo {
+    height: 36px;
+    align-self: center;   
+}
+
+span {
+    color: hsl(0, 17%, 58%);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 16px;    
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 16px;
+    line-height: 52px;
+    color: rgb(29, 29, 29);
+    width: 30%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: hsl(0, 17%, 58%);
+    display: grid;
+    width: 85%;
+    line-height: 28px;
+    height: 30px;
+    /*margin-top: 32px;*/
+    height: 60px;
+    place-self: start;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    width: 440px;
+    height: 48px;
+    border-radius: 50px;
+    border: 2px solid rgba(128, 128, 128, 0.317);
+    place-self: start;
+}
+
+.email {
+   align-items: center; 
+   text-align: left;
+   padding-left: 30px;
+   letter-spacing: 2px;
+}
+
+.email p {
+    height: 48px;
+    
+}
+
+.btn-arrow {
+    display: grid;
+    position: absolute;
+    left: 400px;
+    background-image: linear-gradient(135deg, rgb(248, 191, 191), rgb(238, 140, 140)) ;
+    width: 100px;
+    height: 48px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+    object-fit: contain;
+    height: 580px;
+    max-width: 100%;
+    height: auto;
+}
