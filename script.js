@@ -1,31 +1,33 @@
 const button = document.querySelector('.btn-arrow');
-const link = "https://www.yamaclimbing.com/";
-const emailAddress = document.querySelector('.email');
 const required = document.querySelector('.requirements');
 const errorIcon = document.querySelector('.icon-error');
+const emailAddress = document.querySelector("#form-input");
+const mailformat = /\S+@\S+\.\S+/;
 
 
-function valid(emailAddress) {
-    const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(emailAddress !== mailformat) {
-    return required.style.display = "grid";
-    } else {
-        return link;
-    }  //document.form1.text1.focus();        
+function submitForm(e){
+e.preventDefault()
+let emailAddress = document.querySelector("#form-input")
+if(emailAddress.value){
+   valid(emailAddress.value)
+}else {
+    console.log("not valid")
+    }
 }
 
-button.addEventListener('click', valid);
+function valid(emailAddress){
+    const link = "https://www.yamaclimbing.com/";
+    if(mailformat.test(emailAddress)) {
+        return window.location.href = link        // styleMedia.do something ot the style   
+    } else { 
+        required.style.color = "hsl(0, 93%, 68%)";
+        errorIcon.style.display = "grid";
+       console.log("not valid email format")   
+    }
+}
+
+form.addEventListener('submit', submitForm);
 
 
-/*function ValidateEmail(inputText) {
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(inputText.value.match(mailformat)) {
-    alert("Valid email address!");
-    document.form1.text1.focus();
-    return true;
-    } else {
-    alert("You have entered an invalid email address!");
-    document.form1.text1.focus();
-    return false;
-        }
-    }*/
+
+
